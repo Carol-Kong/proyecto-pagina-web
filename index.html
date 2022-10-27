@@ -15,6 +15,8 @@
                 <a href="#somos-proya">Quienes Somos</a>
                 <a href="#nuestros-programas">Nuestros Programas</a>
                 <a href="#caracteristicas">Características</a>
+                <a href="#final">Contactanos</a>
+
             </nav>
         </div>
     </header>
@@ -64,11 +66,14 @@
     <section id="caracteristicas">
         <div class="container">
             <ul>
-                <li>✔️ 100% online</li>
+                <li>✔️ Curso online</li>
                 <li>✔️ Flexibilidad de horarios</li>
-                <li>✔️ Soporte 1:1</li>
+                <li>✔️ Curso presencial</li>
                 <li>✔️ Asistencia financiera</li>
             </ul>
+            <h3>Donde estamos</h3> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7811.258950913343!2d-58.3810664201598!3d-34.59834952307941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccab5dae376a3%3A0x14c7a4758e4a76c0!2sEdificio%20Plaza%20San%20Mart%C3%ADn!5e0!3m2!1ses-419!2sar!4v1666665470891!5m2!1ses-419!2sar" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> Dirección</iframe>
+        
         </div>
     </section>
 
@@ -101,6 +106,33 @@
         <div class="container">
             <p>&copy; Program Now 2022</p>
         </div>
-    </footer>
+        <p> El Inglés es fundamental,una herramienta a continuación:
+        <input type="text" id="Text">
+        <input type="text" id="Result">
+        <button onclick="traducir()">Traducir al Inglés</button>   
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"></a>
+    
+    <script>
+     function buscarIntegrantes() {
+
+}
+
+let BuscarIntegrantesBoton = document.getElementById("BuscarIntegrantes");
+BuscarIntegrantesBoton.addEventListener("click", buscarIntegrantes);
+
+function traducir() {
+    const text = document.getElementById('Text').value;
+    const target = 'eng';
+    const url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + target + '&dt=t&q=' + encodeURI(text);
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+           document.getElementById("Result").value = data[0][0][0];
+        })
+        .catch(error => console.error(error))
+}  
+        
+    </script>
+</footer>
 </body>
 </html>
